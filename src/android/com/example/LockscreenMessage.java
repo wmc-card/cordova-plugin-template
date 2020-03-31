@@ -16,13 +16,13 @@ import android.util.Log;
 
 import java.util.Date;
 
-public class MyCordovaPlugin extends CordovaPlugin {
-  private static final String TAG = "MyCordovaPlugin";
+public class LockscreenMessage extends CordovaPlugin {
+  private static final String TAG = "LockscreenMessage";
 
   public void initialize(CordovaInterface cordova, CordovaWebView webView) {
     super.initialize(cordova, webView);
 
-    Log.d(TAG, "Initializing MyCordovaPlugin");
+    Log.d(TAG, "Initializing LockscreenMessage");
   }
 
   public boolean execute(String action, JSONArray args, final CallbackContext callbackContext) throws JSONException {
@@ -32,7 +32,8 @@ public class MyCordovaPlugin extends CordovaPlugin {
       Log.d(TAG, phrase);
     } else if(action.equals("getDate")) {
       // An example of returning data back to the web layer
-      final PluginResult result = new PluginResult(PluginResult.Status.OK, (new Date()).toString());
+      String p = "nahh";
+      final PluginResult result = new PluginResult(PluginResult.Status.OK, p);
       callbackContext.sendPluginResult(result);
     }
     return true;
