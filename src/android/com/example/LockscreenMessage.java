@@ -32,6 +32,8 @@ public class LockscreenMessage extends CordovaPlugin {
     if(action.equals("echo")) {
       String phrase = args.getString(0);
       // Echo back the first argument
+          Context context=this.cordova.getActivity().getApplicationContext();
+          Toast.makeText(context,"Hello wmc",Toast.LENGTH_SHORT).show();
       Log.d(TAG, phrase);
     } else if(action.equals("getDate")) {
       // An example of returning data back to the web layer
