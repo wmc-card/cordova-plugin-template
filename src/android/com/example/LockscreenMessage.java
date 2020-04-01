@@ -56,7 +56,7 @@ public class LockscreenMessage extends CordovaPlugin {
                         .setContentTitle("Notifications Example")
                         .setContentText("This is a test notification");
 
-        Intent notificationIntent = new Intent(this, this.cordova.getActivity());
+        Intent notificationIntent = new Intent(context, this.cordova.getActivity());
         PendingIntent contentIntent = PendingIntent.getActivity(context, 0, notificationIntent,
                 PendingIntent.FLAG_UPDATE_CURRENT);
         builder.setContentIntent(contentIntent);
