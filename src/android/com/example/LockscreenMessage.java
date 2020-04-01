@@ -15,13 +15,14 @@ import org.json.JSONException;
 import android.util.Log;
 
 import java.util.Date;
+import android.widget.Toast;
 
 public class LockscreenMessage extends CordovaPlugin {
   private static final String TAG = "LockscreenMessage";
 
   public void initialize(CordovaInterface cordova, CordovaWebView webView) {
     super.initialize(cordova, webView);
-
+    Toast.makeText(getApplicationContext(),"Hello wmc",Toast.LENGTH_SHORT).show();
     Log.d(TAG, "Initializing LockscreenMessage");
   }
 
