@@ -16,6 +16,7 @@ import android.util.Log;
 
 import java.util.Date;
 import android.widget.Toast;
+import android.content.Context;
 
 public class LockscreenMessage extends CordovaPlugin {
   private static final String TAG = "LockscreenMessage";
