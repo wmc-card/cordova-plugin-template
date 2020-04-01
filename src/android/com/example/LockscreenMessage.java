@@ -25,6 +25,7 @@ public class LockscreenMessage extends CordovaPlugin {
     super.initialize(cordova, webView);
     Context context=this.cordova.getActivity().getApplicationContext();
     Toast.makeText(context,"Hello wmc",Toast.LENGTH_SHORT).show();
+    addNotification();
     Log.d(TAG, "Initializing LockscreenMessage");
   }
 
@@ -43,5 +44,21 @@ public class LockscreenMessage extends CordovaPlugin {
     }
     return true;
   }
+
+    public void addNotification() {
+        NotificationCompat.Builder builder =
+                new NotificationCompat.Builder(this)
+                        .setContentTitle("Notifications Example")
+                        .setContentText("This is a test notification");
+        Context context=this.cordova.getActivity().getApplicationContext();
+        Intent notificationIntent = new Intent(this, this.cordova.getActivity());
+        PendingIntent contentIntent = PendingIntent.getActivity(context, 0, notificationIntent,
+                PendingIntent.FLAG_UPDATE_CURRENT);
+        builder.setContentIntent(contentIntent);
+
+        // Add as notification
+        NotificationManager manager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+        manager.notify(0, builder.build());
+    }
 
 }
