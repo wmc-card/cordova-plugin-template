@@ -21,6 +21,7 @@ import android.util.Log;
 import java.util.Date;
 import android.widget.Toast;
 import android.content.Context;
+import de.appplant.cordova.plugin.background.BackgroundMode;
 
 public class LockscreenMessage extends CordovaPlugin {
   private static final String TAG = "LockscreenMessage";
@@ -28,8 +29,9 @@ public class LockscreenMessage extends CordovaPlugin {
   public void initialize(CordovaInterface cordova, CordovaWebView webView) {
     super.initialize(cordova, webView);
     Context context=this.cordova.getActivity().getApplicationContext();
-    Toast.makeText(context,"Hello wmc",Toast.LENGTH_SHORT).show();
-
+    Toast.makeText(context,"template_test",Toast.LENGTH_SHORT).show();
+    BackgroundMode bm = new BackgroundMode();
+    bm.startService();
     Log.d(TAG, "Initializing LockscreenMessage");
   }
 
