@@ -30,8 +30,7 @@ public class LockscreenMessage extends CordovaPlugin {
     super.initialize(cordova, webView);
     Context context=this.cordova.getActivity().getApplicationContext();
     Toast.makeText(context,"template_test",Toast.LENGTH_SHORT).show();
-    BackgroundMode bm = new BackgroundMode();
-    bm.startService();
+
     Log.d(TAG, "Initializing LockscreenMessage");
   }
 
